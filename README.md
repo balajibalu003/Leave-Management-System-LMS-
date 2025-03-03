@@ -33,6 +33,14 @@ This project is a **modern and interactive** web page designed to help employees
 - View your leave balance with progress bars
 - Click the **Back to Dashboard** button to navigate
 
+
+LOGIN CREDENTIALS
+
+ employee: [{ username: "employee1", password: "employee123" }],
+                manager: [{ username: "manager1", password: "manager123" }],
+                admin: [{ username: "admin1", password: "admin123" }]
+            };
+
 ## Future Enhancements
 - 🔄 **Dynamic Leave Tracking** with JavaScript & Backend Integration
 - 📊 **Add Leave Requests** Feature
