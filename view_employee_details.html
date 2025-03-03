@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 700px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        .search-box, .filter-select {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Employee Details</h2>
+        
+        <input type="text" id="search" class="search-box" placeholder="Search by Employee Name..." onkeyup="searchEmployee()">
+        
+        <select id="departmentFilter" class="filter-select" onchange="filterDepartment()">
+            <option value="">Filter by Department</option>
+            <option value="IT">IT</option>
+            <option value="TESTING">TESTING</option>
+            <option value="HR">HR</option>
+        </select>
+
+        <table id="employeeTable">
+            <tr>
+                <th>Employee Name</th>
+                <th>Department</th>
+                <th>Leave Balance</th>
+            </tr>
+            <tr>
+                <td>John Doe</td>
+                <td>IT</td>
+                <td>8 Days</td>
+            </tr>
+            <tr>
+                <td>Jane Smith</td>
+                <td>TESTING</td>
+                <td>10 Days</td>
+            </tr>
+            <tr>
+                <td>Michael Brown</td>
+                <td>HR</td>
+                <td>12 Days</td>
+            </tr>
+            <tr>
+                <td>Sarah Johnson</td>
+                <td>IT</td>
+                <td>5 Days</td>
+            </tr>
+        </table>
+
+        <a href="admin_dashboard.html" class="btn">Back to Dashboard</a>
+    </div>
+
+    <script>
+        function searchEmployee() {
+            let input = document.getElementById("search").value.toLowerCase();
+            let table = document.getElementById("employeeTable");
+            let rows = table.getElementsByTagName("tr");
+
+            for (let i = 1; i < rows.length; i++) {
+                let name = rows[i].getElementsByTagName("td")[0].textContent.toLowerCase();
+                rows[i].style.display = name.includes(input) ? "" : "none";
+            }
+        }
+
+        function filterDepartment() {
+            let filter = document.getElementById("departmentFilter").value.toLowerCase();
+            let table = document.getElementById("employeeTable");
+            let rows = table.getElementsByTagName("tr");
+
+            for (let i = 1; i < rows.length; i++) {
+                let department = rows[i].getElementsByTagName("td")[1].textContent.toLowerCase();
+                rows[i].style.display = (filter === "" || department === filter) ? "" : "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View All Users</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        .search-box {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .status-active {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .status-inactive {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        .btn {
+            display: inline-block;
+            padding: 8px 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            background: #6c757d;
+        }
+        .back-btn:hover {
+            background: #5a6268;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>All Employees & Managers</h2>
+        <p>Admin has full access to view and manage employee and manager details.</p>
+        
+        <input type="text" id="search" class="search-box" placeholder="Search by Name or Role..." onkeyup="searchUser()">
+        
+        <table id="userTable">
+            <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>John Doe</td>
+                <td>Employee</td>
+                <td>john.doe@example.com</td>
+                <td class="status-active">Active</td>
+                <td><button class="btn">View Profile</button></td>
+            </tr>
+            <tr>
+                <td>Jane Smith</td>
+                <td>Manager</td>
+                <td>jane.smith@example.com</td>
+                <td class="status-active">Active</td>
+                <td><button class="btn">View Profile</button></td>
+            </tr>
+            <tr>
+                <td>Michael Brown</td>
+                <td>Employee</td>
+                <td>michael.brown@example.com</td>
+                <td class="status-inactive">Inactive</td>
+                <td><button class="btn">View Profile</button></td>
+            </tr>
+            <tr>
+                <td>Sarah Johnson</td>
+                <td>Manager</td>
+                <td>sarah.johnson@example.com</td>
+                <td class="status-active">Active</td>
+                <td><button class="btn">View Profile</button></td>
+            </tr>
+        </table>
+
+        <a href="admin_dashboard.html" class="btn back-btn">Back to Dashboard</a>
+    </div>
+
+    <script>
+        function searchUser() {
+            let input = document.getElementById("search").value.toLowerCase();
+            let table = document.getElementById("userTable");
+            let rows = table.getElementsByTagName("tr");
+
+            for (let i = 1; i < rows.length; i++) {
+                let name = rows[i].getElementsByTagName("td")[0].textContent.toLowerCase();
+                let role = rows[i].getElementsByTagName("td")[1].textContent.toLowerCase();
+
+                if (name.includes(input) || role.includes(input)) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

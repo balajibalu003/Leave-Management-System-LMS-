@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approve/Reject Leave Requests</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: 600px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+        }
+
+        .btn {
+            padding: 12px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            transition: transform 0.2s ease, background 0.3s ease;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .approve {
+            background: linear-gradient(135deg, #28a745, #1e7e34);
+        }
+
+        .approve:hover {
+            background: linear-gradient(135deg, #1e7e34, #155d27);
+            transform: scale(1.05);
+        }
+
+        .reject {
+            background: linear-gradient(135deg, #dc3545, #a71d2a);
+        }
+
+        .reject:hover {
+            background: linear-gradient(135deg, #a71d2a, #7a131f);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Approve/Reject Leave Requests</h2>
+        <table>
+            <tr>
+                <th>Employee Name</th>
+                <th>Leave Type</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>Raj</td>
+                <td>Annual Leave</td>
+                <td>2025-03-10</td>
+                <td>2025-03-15</td>
+                <td>
+                    <button class="btn approve">Approve</button>
+                    <button class="btn reject">Reject</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Tejas</td>
+                <td>Sick Leave</td>
+                <td>2025-04-01</td>
+                <td>2025-04-03</td>
+                <td>
+                    <button class="btn approve">Approve</button>
+                    <button class="btn reject">Reject</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>

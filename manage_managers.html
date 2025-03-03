@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Managers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        .status {
+            font-weight: bold;
+        }
+        .present {
+            color: green;
+        }
+        .absent {
+            color: red;
+        }
+        .action-btn {
+            padding: 8px 12px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            color: white;
+        }
+        .approve { background-color: #28a745; }
+        .approve:hover { background-color: #218838; }
+        .reject { background-color: #dc3545; }
+        .reject:hover { background-color: #c82333; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Manage Manager Activity</h2>
+        <p>Here, the admin can monitor and manage all manager activities.</p>
+        
+        <h3>Manager: XYZ</h3>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Activity</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+            <tr>
+                <td>2025-03-01</td>
+                <td>Reviewed Employee Performance</td>
+                <td class="status present">Completed</td>
+                <td>
+                    <button class="action-btn approve">Approve</button>
+                    <button class="action-btn reject">Reject</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2025-03-02</td>
+                <td>Scheduled Team Meeting</td>
+                <td class="status present">Pending</td>
+                <td>
+                    <button class="action-btn approve">Approve</button>
+                    <button class="action-btn reject">Reject</button>
+                </td>
+            </tr>
+        </table>
+        
+        <h3>Attendance</h3>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Attendance</th>
+            </tr>
+            <tr>
+                <td>2025-03-01</td>
+                <td class="status present">Present</td>
+            </tr>
+            <tr>
+                <td>2025-03-02</td>
+                <td class="status absent">Absent</td>
+            </tr>
+        </table>
+        
+        <br>
+        <a href="admin_dashboard.html">Back to Dashboard</a>
+    </div>
+</body>
+</html>

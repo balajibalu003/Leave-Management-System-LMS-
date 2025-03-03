@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Leave History</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .status-approved {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .status-pending {
+            color: #ffc107;
+            font-weight: bold;
+        }
+        .status-rejected {
+            color: #dc3545;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Your Leave History</h2>
+        <table>
+            <tr>
+                <th>Type</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>Annual Leave</td>
+                <td>2025-01-10</td>
+                <td>2025-01-15</td>
+                <td class="status-approved">Approved</td>
+            </tr>
+            <tr>
+                <td>Sick Leave</td>
+                <td>2025-02-05</td>
+                <td>2025-02-07</td>
+                <td class="status-pending">Pending</td>
+            </tr>
+            <tr>
+                <td>Casual Leave</td>
+                <td>2025-03-12</td>
+                <td>2025-03-14</td>
+                <td class="status-rejected">Rejected</td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>

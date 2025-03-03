@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .dashboard-container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: 450px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .dashboard-container h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            width: 100%;
+        }
+
+        .btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            text-decoration: none;
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            transition: transform 0.2s ease, background 0.3s ease;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #0056b3, #003c80);
+            transform: scale(1.05);
+        }
+
+        .logout {
+            background: linear-gradient(135deg, #dc3545, #a71d2a);
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .logout:hover {
+            background: linear-gradient(135deg, #a71d2a, #7a131f);
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h2>Admin Dashboard</h2>
+
+        <div class="feature-grid">
+            <a href="manage_managers.html" class="btn">Manage Manager</a>
+            <a href="edit_leave_calendar.html" class="btn">Leave Calendar</a>
+            <a href="view_all_users.html" class="btn">User Management</a>
+            <a href="reports.html" class="btn">Reports</a>
+        </div>
+
+        <a href="index.html" class="btn logout">Logout</a>
+    </div>
+</body>
+</html>
